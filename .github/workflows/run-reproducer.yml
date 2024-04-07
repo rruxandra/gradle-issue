@@ -17,7 +17,7 @@ jobs:
         arguments: generatePomFileForMavenJavaPublication --quiet
     - name: Check generated pom file
       run: |
-        if ! grep -q "exclusions" build/pom-default.xml; then
+        if ! grep -q "exclusions" build/publications/mavenJava/pom-default.xml; then
           echo "Generated pom file does not contain exclusions"
           exit 1
         fi
